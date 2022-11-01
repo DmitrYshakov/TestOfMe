@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ushakov_D</title>
+    <style>
+        section{
+            margin: 5px auto;
+            display: flex;
+            justify-content: center;
+        }
+        button, input{
+            cursor: pointer;
+        }
+        input{
+            margin-left: 15px;
+        }
+
+        button{
+            margin: auto 10px;
+            border: 2px solid black;
+            padding: 1px 2px;
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: lightgray;
+        }
+        .output_1, .output_2, .output_3{
+            display: inline-block;
+            border: 1px solid black;
+            padding: 1px 2px;
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="h1">
+            <h1>Тестовое задание</h1>
+        </section>
+        <!-- Задание №1 -->
+        <section class="Task_1">
+            <div class="task_1">Задание №1</div>
+            <input type="text" class="input_1" placeholder="Введите число">
+            <button class="button_1">Ввод</button>
+            <div class="output_1">ожидайте вывод</div>
+        </section>
+
+        <!-- Задание №2 -->
+        <section class="Task_2">
+            <div class="task_2">Задание №2</div>
+            <input type="text" class="input_2" placeholder="Введите имя">
+            <button class="button_2">Ввод</button>
+            <div class="output_2">ожидайте вывод</div>
+        </section>
+
+        <!-- Задание №3 -->
+        <section class="Task_3">
+            <div class="task_3">Задание №3</div>
+            <input type="text" class="input_3" placeholder="Введите массив">
+            <button class="button_3">Ввод</button>
+            <div class="output_3">ожидайте вывод</div>
+        </section>
+    </main>
+    <script>
+        //Задание №1
+        document.querySelector('.button_1').addEventListener ('click', myClick1);
+        function myClick1() {
+            let inp1 = document.querySelector('.input_1').value;
+            if (+inp1 > 7){
+                console.log('Привет');
+                document.querySelector('.output_1').innerHTML = 'Привет';
+            }
+        }
+        //Задание №2
+        document.querySelector('.button_2').addEventListener ('click', myClick2);
+        function myClick2() {
+            let inp2 = document.querySelector('.input_2').value;
+            if (inp2 == 'Вячеслав'){
+                console.log('Привет ' + inp2);
+                document.querySelector('.output_2').innerHTML = 'Привет ' + inp2;
+            }
+        }
+        //Задание №3
+        document.querySelector('.button_3').onclick = myClick3;
+        function myClick3() {
+            let inp3 = document.querySelector('.input_3').value;
+            //console.log(inp3)
+            //let inp3 = [1,2,3,4,5,6,7,8,9,0]
+            let out3 = inp3.filter((item) => {
+                if (item % 3 === 0){
+                return true;
+            }
+            });
+            console.log(out3);
+            document.querySelector('.output_3').innerHTML = out3;
+        }
+    </script>
+</body>
+</html>
